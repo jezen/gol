@@ -14,9 +14,10 @@ genStartCoords w h = do
     pure (x, y)
 
 logic :: GEnv -> World -> Event -> Either r World
-logic env world _event = pure $ Life.tick world
+logic _env world _event = pure $ Life.tick world
 
-draw env world = stringPlane $ showWorld world
+draw :: GEnv -> World -> Plane
+draw _env world = stringPlane $ showWorld world
 
 main :: IO ()
 main = do

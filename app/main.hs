@@ -23,5 +23,5 @@ main :: IO ()
 main = do
   (w, h) <- displaySize
   coords <- genStartCoords w h
-  let world = foldr (\(x, y) m -> setLiveInWorld (y, x) m) (deadWorld w h) coords
+  let world = foldr (\(x, y) m -> setLiveInWorld (y, x) m) (deadWorld h w) coords
   playGame_ $ Game 13 world logic draw

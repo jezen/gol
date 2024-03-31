@@ -24,11 +24,15 @@ executable gol
   other-modules:      Paths_gol
   hs-source-dirs:     app
   default-extensions: ImportQualifiedPost
-  ghc-options:        -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:
+    -threaded -rtsopts -with-rtsopts=-N -Wall -Werror -fwarn-tabs
+    -Wincomplete-uni-patterns -Wincomplete-record-updates -Widentities
+    -Wredundant-constraints -Wcpp-undef -Wno-type-defaults
+    -Wunused-packages
+
   build-depends:
-    , ansi-terminal
-    , base           >=4.9.1.0 && <5
-    , conduit
+    , ansi-terminal-game
+    , base                >=4.9.1.0 && <5
     , gol
     , random
 
